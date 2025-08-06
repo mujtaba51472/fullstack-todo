@@ -1,17 +1,14 @@
-# Dependencies
+# Node modules (both backend & client)
 node_modules/
 
-# Environment variables
+# Next.js build files
+client/.next/
+client/out/
+
+# Environment files
 .env
-.env.local
+*.env.local
 
-# Production
-build/
-dist/
-
-# Debug logs
-*.log
-
-# Editor/IDE
+# IDE & OS files
 .vscode/
-.idea/
+.DS_Store
