@@ -9,8 +9,13 @@ dotenv.config()
 const PORT = process.env.PORT || 5000
 
 const app = express()
-app.use(cors())
-app.use(express.json())
+// in Express
+app.use(cors({
+  origin: "http://localhost:3000", // your Next.js dev URL
+  credentials: true
+}));
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
