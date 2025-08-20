@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 export function middleware(request) {
   const token = request.cookies.get('token')?.value
   const { pathname } = request.nextUrl
+  console.log('Middleware triggered for:', pathname)
 
   // Protected routes
   if (pathname.startsWith('/dashboard')) {
